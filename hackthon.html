@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Temple Waste Creations</title>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="public/mehek.ico" type="image/x-icon">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header and Navbar */
+         /* General Reset */
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header Styling */
+        header {
+            position: fi;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.6); /* Transparent background with a slight black tint */
+            backdrop-filter: blur(10px); /* Blurred background effect */
+            color: white;
+            padding: 15px 0; /* Increased padding for a prominent header */
+            animation: fadeInDown 1s ease-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        /* Logo */
+        .navbar .logo h1 {
+            font-size: 2em;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 2px;
+            animation: logoAnimation 2s ease-out;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .logo h1:hover {
+            color: #ff8c1a; /* Change logo color on hover */
+        }
+
+        /* Navbar Menu Styling */
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar nav ul li {
+            display: inline;
+        }
+
+        .navbar nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar nav ul li a:hover {
+            background-color: #ff8c1a; /* Highlight menu items on hover */
+        }
+
+        .navbar nav ul li .btn {
+            background-color: #ff8c1a; /* Call-to-action button color */
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar nav ul li .btn:hover {
+            background-color: #ff6600; /* Change button color on hover */
+        }
+
+        /* Header Animation (Slide Down Effect) */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo Animation */
+        @keyframes logoAnimation {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            position: relative;
+            animation: backgroundColorChange 5s infinite;
+            margin-top: 100px; /* Added margin to make space for the fixed header */
+            transition: background-color 2s ease; /* Smooth background transition */
+        }
+
+        /* Hero Text Styling */
+        .hero-text {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 2s ease-out, slideInFromLeft 2s ease-out;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: textFadeIn 1.5s ease-out forwards;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            font-weight: bolder;
+            opacity: 0;
+            animation: textFadeIn 2s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        /* Hero Animation for Text */
+        @keyframes textFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Text slide-in effect */
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Background Color Change */
+        @keyframes backgroundColorChange {
+            0% {
+                background-color:  rgba(0, 0, 0, 0.6);
+            }
+            50% {
+                background-color:  rgba(0, 0, 0, 0.6);
+            }
+            100% {
+                background-color:  rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        /* Button Animation */
+        .hero .btn-exchange {
+            margin-top: 30px;
+            background-color:#ffcc80 ;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .hero .btn-exchange:hover {
+            transform: scale(1.1);
+            background-color: #ff6600;
+        }
+
+
+    
+
+        /* Video Section */
+        .video-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .video-item {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        .video-item h3 {
+            margin-top: 10px;
+            font-size: 1.5em;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .products h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .product-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        .product-item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .product-item h3 {
+            font-size: 1.5em;
+            margin-top: 15px;
+        }
+
+        .product-item p {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 50px 20px;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 50px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .contact form input,
+        .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact form button {
+            background-color:black;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        .contact form button:hover {
+            background-color: red;
+        }
+
+        /* Footer */
+        body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Footer Styling */
+    footer {
+      background: black;
+      color: white;
+      padding: 20px 20px 40px;
+      position: relative;
+    }
+
+    /* Decorative Image Section */
+    .footer-top-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .footer-left,
+    .footer-middle,
+    .footer-right {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+    }
+
+    .footer-middle p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .footer-right ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-right ul li {
+      margin: 10px 0;
+    }
+
+    .footer-right ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-right ul li a:hover {
+      color: #ffcc00;
+    }
+
+    /* Contact Section Styling */
+    .footer-contact {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .footer-contact h3 {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 24px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #ffcc00;
+    }
+
+    /* Social Media Icon Styling */
+    .social-icons i {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border-radius: 50%;
+      background: grey;
+      transition: background 0.3s;
+    }
+
+    .social-icons i:hover {
+      background: red;
+    }
+
+    /* exchange */
+
+    /* Section Styling */
+.exchange {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    background-color: #ff9933;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add Animation to the Content */
+.exchange-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Animation: Fade In Up */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title and Paragraph Styling */
+.exchange-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.exchange-content p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    animation: fadeInUp 2s ease-out;
+}
+
+/* Button Styling with Hover Animation */
+.btn-exchange {
+    background-color: #fff;
+    color: #ff9933;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px;
+}
+
+/* Hover Effects for Button */
+.btn-exchange:hover {
+    background-color: #ffcc80;
+    transform: translateY(-5px);
+}
+
+/* Add Motion to the Whole Section */
+.exchange {
+    animation: slideIn 2s ease-out;
+}
+
+/* Keyframes for Sliding In Effect */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.container {
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: #fff;
+            padding: 50px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonials-section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #ff8c1a;
+        }
+
+        /* Testimonial Cards */
+        .testimonial-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: #ffcc80;
+            padding: 20px;
+            width: 280px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* User Image */
+        .user-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        /* User Name */
+        .user-name {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Testimonial Text */
+        .testimonial-text {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Rating */
+        .rating {
+            color: #ff8c1a;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <header>
+       
+        <div class="navbar">
+            <div class="logo">
+                <h1>MEHEK</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="login.html" class="btn">Log in</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section>
+         <div style="margin-left: 530px; margin-bottom: -100px;">
+          <a href="#"><img src="public/mehek1.png" alt=""></a>
+       </div>
+   </section>
+
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h2>Transforming Temple Waste into Beautiful Products</h2>
+            <p style="font-weight: bolder;">We recycle temple offerings and convert them into incense sticks, colors, and leather products.</p>
+            
+        </div>
+    </section>
+   
+
+ 
+
+    <section id="products" class="products">
+        <h2>Our Products</h2>
+        <marquee behavior="scroll" direction="left" style="font-size: 20px; font-weight: bolder; background-color:#ff9933; color: white; border-color: red 2px solid; border-radius: 20%;">up to 50% off on first order &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;& &nbsp;&nbsp;&nbsp;free shipping above ₹500</marquee>
+        <div class="product-container">
+            <div class="product-item">
+                <img src="public/dhoop.webp" alt="Incense Sticks">
+                <h3><a href="dhoop.html">Dhoop</a></h3>
+                <p>Made from organic temple flowers, these incense sticks bring serenity and peace to your space.</p>
+            </div>
+            <div class="product-item">
+                <img src="public/premiumcollection1.webp" alt="Colors">
+                <h3><a href="premiumcollection.html">Premium collection</a></h3>
+                <p>  made from flowers features luxurious, eco-friendly incense sticks crafted by recycling discarded floral waste.</p>
+            </div>
+            <div class="product-item">
+                <img src="public/hawan cups.webp" alt="Leather Products">
+                <h3><a href="hawancups.html">Hawan Cups</a></h3>
+                <p>Eco-friendly  products crafted from temple waste, creating sustainable cups.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products" style="margin-top: -100px;">
+      
+        <div class="product-container">
+            <div class="product-item">
+                <img src="public/herbal colours.webp" alt="Incense Sticks">
+                <h3><a href="herbalcolor.html">Herbal color</a></h3>
+                <p>made from flowers are eco-friendly, non-toxic powders created by recycling flower waste.</p>
+            </div>
+            <div class="product-item">
+                <img src="public/cones.webp" alt="Colors">
+                <h3><a href="cones.html">Cones collection</a></h3>
+                <p>made from flowers are eco-friendly incense cones crafted by recycling floral waste.</p>
+            </div>
+            <div class="product-item">
+                <img src="public/vogue collection (2).webp" alt="Leather Products">
+                <h3><a href="vogue.html">Vogue collection</a></h3>
+                <p>an exclusive range of incense sticks crafted to enhance meditation and mindfulness practices.</p>
+            </div>
+        </div>
+    </section>
+
+       <!-- New Video Section -->
+       <section class="video-section">
+        <div class="video-item">
+            <iframe src="public/vid1.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen > </iframe>
+            <h3>Raw material </h3>
+            <p>Learn how we transform temple waste into eco-friendly products with this informative video.</p>
+        </div>
+        <div class="video-item">
+            <iframe src="public/vid2.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 >Process of manufacturing</h3>
+            <p>Discover the sustainable process of converting temple offerings into useful items.</p>
+        </div>
+    </section>
+
+    <section id="exchange" class="exchange">
+        <div class="exchange-content">
+            <h2>Exchange Waste Flowers for Incense Sticks!</h2>
+            <p>Donate your temple flowers and get a free incense stick in return. Join us in making the world greener!</p>
+            <a href="exchange.html" class="btn-exchange">Start the Exchange</a>
+        </div>
+    </section>
+
+    <!-- exchange -->
+
+    
+    <div class="container">
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <h2>What Our Users Are Saying</h2>
+            <div class="testimonial-cards">
+                <!-- Testimonial Card 1 -->
+                <div class="testimonial-card">
+                    <img src="public/man1.webp" alt="User 1" class="user-img">
+                    <div class="user-name">Ramdev baba</div>
+                    <p class="testimonial-text">"Temple Waste Creations has changed the way I view waste. Their products are beautiful and sustainable. I love the incense sticks!"</p>
+                    <div class="rating">
+                        &#9733;&#9733;&#9733;&#9733;&#9733; <!-- 5 stars -->
+                    </div>
+                </div>
+                
+                <!-- Testimonial Card 2 -->
+                <div class="testimonial-card">
+                    <img src="public/woman1.webp" alt="User 2" class="user-img">
+                    <div class="user-name">kangna rawat</div>
+                    <p class="testimonial-text">"I feel so good about using products that help the environment. The leather goods are of great quality too!"</p>
+                    <div class="rating">
+                        &#9733;&#9733;&#9733;&#9733;&#9733; <!-- 5 stars -->
+                    </div>
+                </div>
+
+                <!-- Testimonial Card 3 -->
+                <div class="testimonial-card">
+                    <img src="public/man2.webp" alt="User 3" class="user-img">
+                    <div class="user-name">Suresh baniya</div>
+                    <p class="testimonial-text">"Such a unique concept! The colors made from temple offerings are vibrant and natural. I highly recommend this brand."</p>
+                    <div class="rating">
+                        &#9733;&#9733;&#9733;&#9733;&#9733; <!-- 5 stars -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>We are a sustainable business dedicated to converting temple waste into useful, beautiful products that honor nature and culture.</p>
+    </section>
+
+    
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>We would love to hear from you! Reach out for more information or inquiries.</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+
+    <footer>
+
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>Our Motive</h3>
+                <p>Turning temple waste into sustainable products.</p>
+            </div>
+            <div class="footer-middle">
+                <p>Transforming temple offerings into eco-friendly items.<br>From incense sticks to leather, we ensure a greener future.</p>
+            </div>
+            <div class="footer-right">
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Our Products</a></li>
+                    <li><a href="#sustainability">Sustainability</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://instagram.com" target="_blank" title="Instagram"><i class="bi bi-facebook"></i></a>
+                <a href="https://facebook.com" target="_blank" title="Facebook"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://twitter.com" target="_blank" title="Twitter"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

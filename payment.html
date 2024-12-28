@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    h1, p {
+      text-align: center;
+    }
+
+    /* Order Page Styles */
+    .order-container {
+      width: 80%;
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .payment-options {
+      margin: 20px 0;
+    }
+
+    .payment-options input {
+      margin-right: 10px;
+    }
+
+    .btn {
+      background-color: #ff6b6b;
+      color: white;
+      font-size: 16px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff4757;
+    }
+
+    /* Thank You Page Styles */
+    .thank-you-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f5;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .thank-you-message {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 600px;
+      animation: slideUp 1s ease-out;
+    }
+
+    .thank-you-message h1 {
+      color: #2ecc71;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .confirmation-text {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .delivery-note {
+      font-size: 1rem;
+      color: #555;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Animation Styles */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="order-page" class="order-container">
+    <h1>Order Now</h1>
+    <p>Select your payment method:</p>
+    <form id="order-form">
+      <div class="payment-options">
+        <label>
+          <input type="radio" name="payment" value="cod" id="cod"> Cash on Delivery
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="payment" value="online" id="online"> Online Payment
+        </label>
+      </div>
+      <button type="submit" id="submit-order" class="btn">Place Order</button>
+    </form>
+  </div>
+
+  <!-- Thank You Page (Hidden until redirected) -->
+  <div id="thank-you-page" class="thank-you-container" style="display: none;">
+    <div class="thank-you-message">
+      <h1>Thank You for Your Order!</h1>
+      <p class="confirmation-text">Your order has been successfully placed.</p>
+      <p class="delivery-note">Your product will be delivered to your address via Cash on Delivery.</p>
+      <p class="delivery-note">We will notify you once it's shipped!</p>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for handling form submission and redirection
+    const orderForm = document.getElementById('order-form');
+    const submitOrderBtn = document.getElementById('submit-order');
+    const orderPage = document.getElementById('order-page');
+    const thankYouPage = document.getElementById('thank-you-page');
+    
+    orderForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const paymentMethod = document.querySelector('input[name="payment"]:checked');
+      
+      if (paymentMethod && paymentMethod.value === 'cod') {
+        orderPage.style.display = 'none';  // Hide the order page
+        thankYouPage.style.display = 'flex';  // Show the thank you page
+      } else {
+        alert('Please choose Cash on Delivery to proceed.');
+      }
+    });
+  </script>
+</body>
+</html>

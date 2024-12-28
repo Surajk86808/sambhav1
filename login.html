@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Sign Up - Mehek</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset default margin and padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styling */
+    body {
+      font-family: 'Roboto', sans-serif;
+      height: 100vh;
+      background: url('https://via.placeholder.com/1500x1000') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background-size: cover;
+      animation: backgroundAnimation 30s infinite alternate;
+    }
+
+    /* Background overlay animation */
+    @keyframes backgroundAnimation {
+      0% {
+        filter: brightness(1.2) contrast(1.2);
+      }
+      50% {
+        filter: brightness(0.9) contrast(1.5);
+      }
+      100% {
+        filter: brightness(1) contrast(1);
+      }
+    }
+
+    /* Adding a color overlay for the background */
+    body::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);  /* Dark transparent overlay */
+      z-index: -1;
+      animation: colorOverlay 10s infinite alternate;
+    }
+
+    /* Animation for color overlay */
+    @keyframes colorOverlay {
+      0% {
+        background: rgba(0, 0, 0, 0.5);
+      }
+      50% {
+        background: rgba(0, 123, 255, 0.3); /* Light blue */
+      }
+      100% {
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    /* Marquee (Animated Text) */
+    .marquee {
+      width: 100%;
+      background: #333;
+      color: #fff;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 20px;
+      text-align: center;
+      padding: 10px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      animation: marqueeScroll 10s linear infinite;
+    }
+
+    @keyframes marqueeScroll {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .marquee span {
+      color: #ff4081; /* Vibrant pink color for the discount part */
+      font-weight: bold;
+    }
+
+    /* Login / Sign Up form container */
+    .form-container {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      padding: 40px 30px;
+      max-width: 450px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Header with company name */
+    .form-container h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 36px;
+      text-align: center;
+      color: #00bcd4;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    /* Input fields styling */
+    .input-field {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      background-color: #333;
+      color: #fff;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .input-field:focus {
+      border-color: #00bcd4;
+      outline: none;
+    }
+
+    /* Button styling */
+    .btn {
+      width: 100%;
+      padding: 14px;
+      background-color: #00bcd4;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #008C9E;
+    }
+
+    .btn:active {
+      background-color: #006C73;
+    }
+
+    /* Text link styling */
+    .link-text {
+      text-align: center;
+      color: #fff;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+
+    .link-text a {
+      color: #00bcd4;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .form-container {
+        width: 90%;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Marquee (Scrolling Text) -->
+  <div class="marquee">
+    <span>Welcome! Get 50% Off on Your First Order!</span>
+  </div>
+
+  <!-- Form Container -->
+  <div class="form-container">
+    <!-- Heading (Company Name) -->
+    <h1>Mehek</h1>
+
+    <!-- Login / Sign Up Form -->
+    <h2 id="form-heading">Login to Your Account</h2>
+    
+    <form id="auth-form">
+      <!-- Input for Email or Mobile Number -->
+      <input type="text" id="email-or-phone" class="input-field" placeholder="Enter Email or Mobile Number" required>
+      
+      <!-- Input for Password -->
+      <input type="password" id="password" class="input-field" placeholder="Enter Password" required>
+
+      <!-- Login/Sign Up Button -->
+      <button type="submit" class="btn" id="submit-btn"><a href="loginnew.html">Login</a></button>
+
+      <!-- Link to Toggle between Login and Sign Up -->
+      <p class="link-text" id="toggle-text">Don't have an account? <a href="#" id="toggle-form">Sign Up</a></p>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const formHeading = document.getElementById('form-heading');
+      const toggleText = document.getElementById('toggle-text');
+      const toggleForm = document.getElementById('toggle-form');
+      const authForm = document.getElementById('auth-form');
+      const submitBtn = document.getElementById('submit-btn');
+      const submitBtnText = submitBtn.textContent;
+      
+      // Toggle between Login and Sign Up
+      toggleForm.addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        // Toggle the text and form state
+        if (formHeading.textContent === "Login to Your Account") {
+          formHeading.textContent = "Create a New Account";
+          toggleText.innerHTML = 'Already have an account? <a href="#" id="toggle-form">Login</a>';
+          submitBtn.textContent = 'Sign Up';
+        } else {
+          formHeading.textContent = "Login to Your Account";
+          toggleText.innerHTML = 'Don\'t have an account? <a href="#" id="toggle-form">Sign Up</a>';
+          submitBtn.textContent = 'Login';
+        }
+      });
+      
+      // Submit Form (Login / Sign Up)
+      authForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const emailOrPhone = document.getElementById('email-or-phone').value;
+        const password = document.getElementById('password').value;
+
+        // Basic Validation
+        if (!emailOrPhone || !password) {
+          alert('Please fill in both fields');
+          return;
+        }
+
+        // Check if we're in "Sign Up" mode or "Login" mode
+        if (submitBtn.textContent === 'Sign Up') {
+          // Store the user credentials in localStorage
+          localStorage.setItem('userEmailOrPhone', emailOrPhone);
+          localStorage.setItem('userPassword', password);
+          alert('Account created successfully! You can now login.');
+          
+          // Switch to Login Form
+          formHeading.textContent = "Login to Your Account";
+          toggleText.innerHTML = 'Don\'t have an account? <a href="#" id="toggle-form">Sign Up</a>';
+          submitBtn.textContent = 'Login';
+        } else {
+          // Login logic: Check if credentials match
+          const storedEmailOrPhone = localStorage.getItem('userEmailOrPhone');
+          const storedPassword = localStorage.getItem('userPassword');
+          
+          if (emailOrPhone === storedEmailOrPhone && password === storedPassword) {
+            alert('Login successful!');
+            // Redirect to another page or process after login (optional)
+          } else {
+            alert('Invalid credentials, please try again.');
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

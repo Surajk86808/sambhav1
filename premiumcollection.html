@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- fontawsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <title>page</title>
+    <style type="text/css">
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.head-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.head-section .heading h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #490000;
+}
+.head-content {
+  max-width: 1024px;  
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  padding: 0 5rem;
+  line-height: 2rem;
+}
+.head-content h3 {
+  text-align: center;
+  color: #be6140;
+  font-weight: 400;
+}
+
+/* ==========products========== */
+.product_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 5rem;
+}
+.product_container .product_item {
+  border: 1px solid #00000022;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 350px;
+}
+
+/* =========images=========*/
+
+.product_img_container{
+    position: relative;–––––
+    width: 250px;
+    height: 300px;
+    overflow: hidden;
+}
+.
+
+/* =========hover on entire product item -> image changing =========*/
+.product_item:hover .product_img::after{
+    content: '';
+    position: absolute;
+    width: 90%; 
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    background-image: url("imagedhoop.webp");
+    background-size: cover;
+    background-position: center;
+    transform: translate(-50%, -50%) scale(1.2); 
+    transition: transform 0.3s ease;
+}
+.product_item:hover .product_img{
+    transform: scale(1.1);
+}
+
+/* ==========content=========== */
+.product_item .product_content {
+    padding: 1rem 2rem;
+  }
+/* title */
+.product_content .product_title {
+  margin-bottom: 0.5rem;
+}
+.product_title a {
+  color: #490000;
+}
+
+/* hover on entire product item underline below title=>  */
+.product_item:hover .product_title a{
+    text-decoration: underline;
+}
+
+/* ratings */
+.product_item .product_rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.product_rating i {
+  font-size: 0.5rem;
+  color: #490000;
+}
+
+/* price */
+.product_item .product_price {
+  color: #490000;
+  margin-bottom: 1rem;
+}
+.product_price h1 {
+  font-weight: 400;
+}
+
+/* add to cart btn */
+.product_item .product_btn button {
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 10px;
+  border: 2px solid #be6140;
+  font-size: 1rem;
+  background-color: transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+  &:hover {
+    border: 2px solid #490000;
+  }
+}
+
+/* =========================================media queries======================================= */
+
+
+
+@media (max-width: 767px) {
+    .head-section .head-content{
+        padding: 2rem;
+        min-width: 100%;
+        line-height: 1.5rem;
+    }
+    .head-content h3 {
+        font-size: 1rem;
+    }
+    .product_container .product_item{
+        width: 300px;
+    }
+    .product_img_container{
+        width: 300px;
+        height: 400px;
+    }
+}
+    </style>
+  </head>
+  <body>
+    <section class="head-section">
+      <div class="heading">
+        <h1>Premiere Collection</h1>
+      </div>
+
+      <div class="head-content">
+        <h3>
+          Premiere Collection is an exquisite curation of long-lasting fragrances that not only create a beautiful atmosphere for prayer and meditation but also add a soothing and refreshing touch to your space. The Premiere collection consists of carefully hand-rolled incense sticks made from natural oils and extracts. Choose from a wide range of pleasant and impactful fragrances to awaken your spiritual and sensorial journey. 
+
+         
+        </h3>
+
+        <h3 style="margin-top: 1rem">
+          (Features: Handrolled: Natural: Long-lasting: Healing: Meditation :Yoga)
+        </h3>
+      </div>
+    </section>
+
+    <div class="product_container">
+
+        <!-- ============================================ -->
+      <div class="product_item">
+        <div class="product_img_container">
+            <div class="product_img"><img src="public/premium collection6.webp" alt="sorry image not avlaible" style="width: 100% ; height: 100%;"></div>
+        </div>
+        <div class="product_content">
+        <!-- title -->
+
+        <div class="product_title">
+          <a href="">Lotus premium sticks <div class="underline"></div></a>
+          
+        </div>
+
+        <!-- rating -->
+        <div class="product_rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <p>(9)</p>
+        </div>
+
+        <!-- price -->
+        <div class="product_price">
+            <h1>Rs. 149.00</h1>
+        </div>
+        
+        <!-- add to cart -->
+        <div class="product_btn">
+            <a href="paymentcard.html"> <button>Add to Cart</button></a>
+        </div>
+    </div>
+    </div>
+
+        <!-- ============================================ -->
+      <div class="product_item">
+        <div class="product_img_container">
+            <div class="product_img"><img src="public/premiumcollection1 (2).webp"style="width: 100% ; height: 100%;"></div>
+        </div>
+        <div class="product_content">
+        <!-- title -->
+
+        <div class="product_title">
+          <a href="">Mysore kasturi sticks</a>
+        </div>
+
+        <!-- rating -->
+        <div class="product_rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <p>(9)</p>
+        </div>
+
+        <!-- price -->
+        <div class="product_price">
+            <h1>Rs. 149.00</h1>
+        </div>
+        
+        <!-- add to cart -->
+        <div class="product_btn">
+           <a href="paymentcard.html"> <button>Add to Cart</button></a>
+        </div>
+    </div>
+    </div>
+        <!-- ============================================ -->
+      <div class="product_item">
+        <div class="product_img_container">
+            <div class="product_img"><img src="public/premiumcollection4.webp"sorry image not avlaible" style="width: 100% ; height: 100%;"></div>
+        </div>
+        <div class="product_content">
+        <!-- title -->
+
+        <div class="product_title">
+          <a href="">Garden champa sticks</a>
+        </div>
+
+        <!-- rating -->
+        <div class="product_rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <p>(9)</p>
+        </div>
+
+        <!-- price -->
+        <div class="product_price">
+            <h1>Rs. 149.00</h1>
+        </div>
+        
+        <!-- add to cart -->
+        <div class="product_btn">
+            <a href="paymentcard.html"> <button>Add to Cart</button></a>
+        </div>
+    </div>
+    </div>
+        <!-- ============================================ -->
+      <div class="product_item">
+        <div class="product_img_container">
+            <div class="product_img"><img src="public/premiumcollection3.webp" alt="sorry image not avlaible" style="width: 100% ; height: 100%;"></div>
+        </div>
+        <div class="product_content">
+        <!-- title -->
+
+        <div class="product_title">
+          <a href="">Dulex sticks</a>
+        </div>
+
+        <!-- rating -->
+        <div class="product_rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <p>(9)</p>
+        </div>
+
+        <!-- price -->
+        <div class="product_price">
+            <h1>Rs. 149.00</h1>
+        </div>
+        
+        <!-- add to cart -->
+        <div class="product_btn">
+            <a href="paymentcard.html"> <button>Add to Cart</button></a>
+        </div>
+    </div>
+    </div>
+        <!-- ============================================ -->
+      <div class="product_item">
+        <div class="product_img_container">
+            <div class="product_img"><img src="public/premiumcollection2.webp" alt="sorry image not avlaible" style="width: 100% ; height: 100%;"></div>
+        </div>
+        <div class="product_content">
+        <!-- title -->
+
+        <div class="product_title">
+          <a href="">Banglore special</a>
+        </div>
+
+        <!-- rating -->
+        <div class="product_rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <p>(9)</p>
+        </div>
+
+        <!-- price -->
+        <div class="product_price">
+            <h1>Rs. 149.00</h1>
+        </div>
+        
+        <!-- add to cart -->
+        <div class="product_btn">
+            <a href="paymentcard.html"> <button>Add to Cart</button></a>
+        </div>
+    </div>
+    </div>
+        <!-- ============================================ -->
+      <div class="product_item">
+        <div class="product_img_container">
+            <div class="product_img"><img src="public/premiumcollection1.webp" alt="sorry image not avlaible" style="width: 100% ; height: 100%;"></div>
+        </div>
+        <div class="product_content">
+        <!-- title -->
+
+        <div class="product_title">
+          <a href="">Simple kasturi</a>
+        </div>
+
+        <!-- rating -->
+        <div class="product_rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <p>(9)</p>
+        </div>
+
+        <!-- price -->
+        <div class="product_price">
+            <h1>Rs. 149.00</h1>
+        </div>
+        
+        <!-- add to cart -->
+        <div class="product_btn">
+            <a href="paymentcard.html"> <button>Add to Cart</button></a>
+        </div>
+    </div>
+    </div>
+
+      </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <!-- About Section -->
+          <div class="col-md-4 mb-3">
+            <h5>About Us</h5>
+            <p>We offer a wide range of premium quality agarbattis with natural fragrances to elevate your spiritual and meditative experiences.</p>
+          </div>
+    
+          <!-- Quick Links Section -->
+          <div class="col-md-4 mb-3">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="hackthon.html" class="text-white text-decoration-none">Home</a></li>
+              <li><a href="/products" class="bi bi-instagram"></a></li>
+              <li><a href="/about" class="bi bi-facebook"></a></li>
+              <li><a href="/contact" class="bi bi-twitter-x"></a></li>
+            </ul>
+          </div>
+    
+          <!-- Contact Section -->
+          <div class="col-md-4 mb-3">
+            <h5>Contact Us</h5>
+            <p><i class="bi bi-geo-alt-fill"></i> 456 whitefield Banglore, India</p>
+            <p><i class="bi bi-telephone-fill"></i> +91 9191056612</p>
+            <p><i class="bi bi-envelope-fill"></i> support@mehak.com</p>
+          </div>
+        </div>
+    
+        <!-- Social Media Section -->
+        <div class="row">
+          <div class="col text-center">
+            <a href="#" class="text-white mx-2"><i ></i></a>
+            <a href="#" class="text-white mx-2"><i ></i></a>
+            <a href="#" class="text-white mx-2"><i ></i></a>
+            <a href="#" class="text-white mx-2"><i ></i></a>
+          </div>
+        </div>
+    
+        <hr class="bg-light">
+    
+        <!-- Copyright Section -->
+        <div class="row">
+          <div class="col text-center">
+            <p class="mb-0">&copy; 2024 Agarbatti.com. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- Add Bootstrap CSS and JS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+    </footer>
+    
+  </body>
+</html>

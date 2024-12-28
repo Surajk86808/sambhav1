@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style type="text/css">
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: backgroundMove 10s ease-in-out infinite;
+        }
+
+        /* Keyframes for background animation */
+        @keyframes backgroundMove {
+            0% {
+                background: linear-gradient(135deg, #32cd32, #90ee90);
+            }
+            50% {
+                background: linear-gradient(135deg, #90ee90, #32cd32);
+            }
+            100% {
+                background: linear-gradient(135deg, #32cd32, #90ee90);
+            }
+        }
+
+        /* Thank You Section Styling */
+        #thank-you {
+            padding: 50px;
+            background-color: #ffffff;
+            text-align: center;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            animation: fadeIn 2s ease-in-out, scaleUp 0.5s ease-out;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Scale-up animation */
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0.8);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Heading */
+        #thank-you h2 {
+            font-size: 2.5em;
+            color: #32cd32;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            animation: textBounce 1s ease-out infinite;
+        }
+
+        /* Text bounce animation */
+        @keyframes textBounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Paragraph Styling */
+        #thank-you p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        /* Button Styling */
+        #thank-you .cta-btn {
+            padding: 15px 30px;
+            background-color: #32cd32;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Button Hover Effects */
+        #thank-you .cta-btn:hover {
+            background-color: #28a745;
+            transform: scale(1.1);
+        }
+
+        /* Button Focused Effect */
+        #thank-you .cta-btn:focus {
+            outline: none;
+            border: 2px solid #28a745;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Thank You Section -->
+    <section id="thank-you">
+        <h2>Thank You for Your Donation!</h2>
+        <p>Your flower donation has been successfully submitted. We will send you a free incense stick to your provided address soon. Stay connected!</p>
+        <button class="cta-btn" onclick="window.location.href='index.html'"><a href="hackthon.html">Go Home</a></button>
+    </section>
+</body>
+</html>

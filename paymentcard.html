@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Payment Gateway</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f7f7f7;
+        color: #333;
+        padding: 1rem;
+      }
+      .payment-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+      }
+      .product-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 1rem;
+      }
+      .product-item img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-right: 1rem;
+      }
+      .product-details {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .product-details h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        color: #490000;
+      }
+      .product-details .price {
+        font-size: 0.9rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+      .quantity {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .quantity input {
+        width: 50px;
+        text-align: center;
+        padding: 0.3rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .total {
+        text-align: right;
+        font-size: 1.2rem;
+        color: #490000;
+        margin-top: 1rem;
+      }
+      .proceed-button {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        background-color: #490000;
+        color: white;
+        font-size: 1.2rem;
+        text-align: center;
+        border-radius: 10px;
+        text-decoration: none;
+        margin-top: 2rem;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .proceed-button:hover {
+        background-color: #be6140;
+      }
+      @media (max-width: 600px) {
+        .product-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .product-item img {
+          margin-bottom: 0.5rem;
+        }
+        .product-details {
+          align-items: flex-start;
+        }
+        .total {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+      <img src="public/mhh.png" alt="">
+    <div class="payment-container">
+      <h1 style="text-align: center; margin-bottom: 2rem;">Review Your Products</h1>
+
+      <!-- Product 1 -->
+      <div class="product-item">
+        <img src="public/images/sandalwood_serenity.webp" alt="Sandalwood Dhoop Sticks" />
+        <div class="product-details">
+          <h3>Sandalwood Dhoop Sticks</h3>
+          <p class="price">Price: Rs. 40.00</p>
+          <div class="quantity">
+            <label for="quantity1">Quantity:</label>
+            <input
+              type="number"
+              id="quantity1"
+              value="1"
+              min="1"
+              onchange="updateTotal()"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-item">
+        <img src="public/images/lavender_bliss.webp" alt="Lavender Bliss Dhoop Sticks" />
+        <div class="product-details">
+          <h3>Lavender Bliss Dhoop Sticks</h3>
+          <p class="price">Price: Rs. 50.00</p>
+          <div class="quantity">
+            <label for="quantity2">Quantity:</label>
+            <input
+              type="number"
+              id="quantity2"
+              value="1"
+              min="1"
+              onchange="updateTotal()"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="total" id="totalPrice">Total: Rs. 90.00</div>
+      <a href="payment.html" class="proceed-button">Proceed to Pay</a>
+    </div>
+
+    <script>
+      const prices = [40, 50]; // Prices of the products
+
+      function updateTotal() {
+        const quantities = [
+          document.getElementById("quantity1").value,
+          document.getElementById("quantity2").value,
+        ];
+
+        let total = 0;
+        for (let i = 0; i < prices.length; i++) {
+          total += prices[i] * quantities[i];
+        }
+
+        document.getElementById("totalPrice").textContent = `Total: Rs. ${total.toFixed(
+          2
+        )}`;
+      }
+    </script>
+  </body>
+</html
